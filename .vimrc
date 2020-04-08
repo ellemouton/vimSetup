@@ -36,6 +36,10 @@ set backspace=indent,eol,start
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
 
+" Maintain undo history between sessions
+set undofile 
+set undodir=~/.vim/undodir
+
 " Prevent you from using arrow keys
 " Do this in normal mode...
 nnoremap <Left>  :echoe "Use h"<CR>
@@ -51,7 +55,8 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 " enable plugin
 filetype plugin indent on
 
-
+" Write content of a file automatically if you call :make (vim-go uses this) 
+set autowrite
 
 """""""""""""""""""""""""""""""""""""""""
 """""""" Golang specific settings 
@@ -66,6 +71,10 @@ let g:go_auto_type_info = 1
 " autocomplete prompt whenever you press dot (.)
 au filetype go inoremap <buffer> . .<C-x><C-o>
 
+" make it easier to jump between errors and quickfix list
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a ::cclose<CR>
 
 """""""""NERDTree plugin specific command
 :nnoremap <C-g> :NERDTreeToggle<CR>
