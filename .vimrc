@@ -14,8 +14,7 @@ set relativenumber
 " Disable audible bell because it's annoying.
 set noerrorbells visualbell t_vb=
 
-" Enable mouse support. You should avoid relying on this too much, but it can
-" sometimes be convenient.
+" Enable mouse support. You should avoid relying on this too much, but it can " sometimes be convenient.
 set mouse+=a
 
 " Enable searching as you type, rather than waiting till you press enter.
@@ -57,6 +56,16 @@ filetype plugin indent on
 
 " Write content of a file automatically if you call :make (vim-go uses this) 
 set autowrite
+
+" Use shorter key mappings to switch between vim splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" open splits to the right and bottom (instead of default left and top)
+set splitbelow
+set splitright
 
 """""""""""""""""""""""""""""""""""""""""
 """""""" Golang specific settings 
