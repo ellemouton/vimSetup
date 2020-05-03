@@ -20,6 +20,9 @@ set mouse+=a
 " Enable searching as you type, rather than waiting till you press enter.
 set incsearch
 
+" colour scheme other than the default
+colorscheme desert
+
 " This setting makes search case-insensitive when all characters in the string
 " being searched are lowercase. However, the search becomes case-sensitive if
 " it contains any capital letters. This makes searching more convenient.
@@ -67,6 +70,10 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+" Markdown previewer. Autoupdate after write to buffer.
+let g:preview_markdown_vertical = 1
+let g:preview_markdown_auto_update = 1
+
 """""""""""""""""""""""""""""""""""""""""
 """""""" Golang specific settings 
 """""""""""""""""""""""""""""""""""""""""
@@ -78,7 +85,7 @@ let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1	
 
 " autocomplete prompt whenever you press dot (.)
-au filetype go inoremap <buffer> . .<C-x><C-o>
+" au filetype go inoremap <buffer> . .<C-x><C-o>
 
 " make it easier to jump between errors and quickfix list
 map <C-n> :cnext<CR>
@@ -88,3 +95,6 @@ nnoremap <leader>a ::cclose<CR>
 """""""""NERDTree plugin specific command
 :nnoremap <C-g> :NERDTreeToggle<CR>
 
+
+"========= CTRLP fzf ====================
+set runtimepath^=~/.vim/bundle/ctrlp.vim
